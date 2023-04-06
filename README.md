@@ -1,1 +1,5 @@
-This repo will be a guide to help engineering students learn how to write programs using Assembly Language for the MSP430G2553 microcontroller
+# ASSEMBLY PROGRAMMING LANGUAGE
+
+This repo will help you to get a better understanding when programming in assembly
+
+* Here I'll be sharing some exercices with its solution
