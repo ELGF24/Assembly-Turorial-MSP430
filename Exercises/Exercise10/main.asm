@@ -15,37 +15,37 @@
 
 
 INICIO		mov.w	R4, R6
-			sub.w	R5, R6
-			jmp		MULT100
+		sub.w	R5, R6
+		jmp	MULT100
 
 MULT100		add.w	R6, R15
-			dec.w	R8
-			cmp.w	#00000h, R8
-			jne		MULT100
-			jmp		DIV
+		dec.w	R8
+		cmp.w	#00000h, R8
+		jne		MULT100
+		jmp		DIV
 
-DIV			cmp.w	R4, R15
-			jge		RESTA
-			jmp		FIN
+DIV		cmp.w	R4, R15
+		jge		RESTA
+		jmp		FIN
 RESTA		sub.w	R4, R15
-			inc		R14
-			jmp		DIV
+		inc		R14
+		jmp		DIV
 
-FIN			cmp		#00001h, R14
-			jl		ROJO
-			jmp		VERDE
+FIN		cmp		#00001h, R14
+		jl		ROJO
+		jmp		VERDE
 
 ROJO		mov.b	#040h, &P1OUT
-			call	#DELAY
-			mov.b	#000h, &P1OUT
-			call	#DELAY
-			jmp		ROJO
+		call	#DELAY
+		mov.b	#000h, &P1OUT
+		call	#DELAY
+		jmp		ROJO
 
 
 VERDE		mov.b	#001h, &P1OUT
-			jmp		VERDE
+		jmp		VERDE
 
 DELAY		mov.w	#0FFFFh, R10
-res			dec		R10
-			jne		res
-			ret
+res		dec	R10
+		jne	res
+		ret
